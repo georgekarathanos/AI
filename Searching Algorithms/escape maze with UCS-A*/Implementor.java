@@ -179,37 +179,37 @@ class Implementor{ //periexei thn ylopoihsh twn methodwn
 							continue;
 						}
 					}else if(i==2){ //katw
-						if(posX==check.getN()-1){ //de paei pio katw
+						if(posX==check.getN()-1){
 							continue;
 						}if(check.isX(posX+1,posY)){
 							continue;
 						}
 					}else if(i==3){ //katw deksia
-						if((posY==check.getN()-1) || (posX==check.getN()-1)){ //de paei pio katw kai pio deksia
+						if((posY==check.getN()-1) || (posX==check.getN()-1)){
 							continue;
 						}if(check.isX(posX+1,posY+1)){
 							continue;
 						}
 					}else if(i==4){ //deksia
-						if(posY==check.getN()-1){ //de paei pio deksia
+						if(posY==check.getN()-1){
 							continue;
 						}if(check.isX(posX,posY+1)){
 							continue;
 						}
 					}else if(i==5){ //panw deksia
-						if((posY==check.getN()-1) || (posX==0)){ //de paei pio panw kai pio deksia
+						if((posY==check.getN()-1) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY+1)){
 							continue;
 						}
 					}else if(i==6){ //panw
-						if(posX==0){ //de paei pio panw
+						if(posX==0){
 							continue;
 						}if(check.isX(posX-1,posY)){
 							continue;
 						}
 					}else if(i==7){ //panw aristera
-						if((posY==0) || (posX==0)){ //de paei pio panw kai pio aristera
+						if((posY==0) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY-1)){
 							continue;
