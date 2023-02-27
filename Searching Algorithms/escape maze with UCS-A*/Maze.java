@@ -2,7 +2,7 @@ import java.util.Random;
 import java.lang.Math;
 import java.util.ArrayList;
 
-class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
+class Maze{ //the maze
 	private int N; //NxN is the number of cells of the array.
 	private Cell[][] maze; //2d array that represents the maze.
 	private int[] s=new int[2]; //beggining cell.
@@ -77,9 +77,9 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		int x= Math.abs(posX-g1[0]); //x axe difference
 		int xR= Math.abs(x-y);
 		if(posX==g1[0]){ //same column
-			if(y%2==0){ //Y artios
+			if(y%2==0){
 				h_n= y*0.5;
-			}else{ //Y perittos
+			}else{
 				h_n= ((y-1)*0.5)+1;
 			}
 		}else{
@@ -107,19 +107,19 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		int x= Math.abs(posX-g2[0]); //x axe difference
 		int xR= Math.abs(x-y);
 		if(posX==g2[0]){ //same column
-			if(y%2==0){ //Y artios
+			if(y%2==0){
 				h_n= y*0.5;
-			}else{ //Y perittos
+			}else{
 				h_n= ((y-1)*0.5)+1;
 			}
 		}else{
-			if(xR%2==0){ //Xr artios
+			if(xR%2==0){
 				if(x>y){
 					h_n= (y*0.5)+(xR*0.5);
 				}else{
 					h_n= (x*0.5)+(xR*0.5);
 				}
-			}else{ //Xr perittos
+			}else{
 				if(x>y){
 					h_n= (y*0.5)+((xR-1)*0.5)+1;
 				}else{
@@ -129,7 +129,7 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		}return h_n;
 	}
 	
-	public double calculateH(){ //calculates h(n)
+	public double calculateH(){
 		double h1= this.calculateH1();
 		double h2= this.calculateH2();
 		if(h1<h2){
@@ -175,13 +175,13 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		return maze[x][y].getValue();
 	}
 
-	public boolean isX(int x, int y){ //blockarismeno keli
+	public boolean isX(int x, int y){ //check if cell is blocked
 		if(maze[x][y].getValue()==0){
 			return true;
 		}return false;
 	}
 
-	public void print(){ //eikona toy lavyrinthou.
+	public void print(){
 		for(int i=0;i<N;i++){
 			for(int j=0;j<N;j++){
 				if(maze[i][j].getCondition()){
@@ -193,7 +193,7 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		}
 	}
 
-	public void printInfo(){ //plhrofiries katastashs.
+	public void printInfo(){
 		System.out.println("N= "+N);
 		System.out.println("position in maze= ("+position[0]+","+position[1]+")");
 		System.out.println("g(["+position[0]+","+position[1]+"])= "+g);
@@ -203,7 +203,7 @@ class Maze{ //lavyrinthos, symbolizei tis katastaseis toy problhmatos.
 		System.out.println("g2= ("+g2[0]+","+g2[1]+")");
 	}
 
-	public void printPath(){ //monopati mias katastashs apo th riza eos aythn.
+	public void printPath(){
 		int num=path.size();
 		String finalPath="Path is: ";
 		for(int i=0;i<num;i++){
