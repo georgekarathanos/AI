@@ -17,38 +17,38 @@ class Implementor{ //periexei thn ylopoihsh twn methodwn
 
 
 	public Maze createKidMaze(Maze parent,int newP){
-		int same=0; //elegxos gia diagonia
+		int same=0;
 		double cost;
 		int N= parent.getN();
 		int newPosX,newPosY;
 		int parentPosX= parent.getPos()[0];
 		int parentPosY= parent.getPos()[1];
 		double parentG= parent.getG();
-		if(newP==0){ //aristera
+		if(newP==0){
 			newPosX= parentPosX;
 			newPosY= parentPosY-1;
-		}else if(newP==1){ //katw aristera
+		}else if(newP==1){
 			newPosX= parentPosX+1;
 			newPosY= parentPosY-1;
 			same=1;
-		}else if(newP==2){ //katw
+		}else if(newP==2){
 			newPosX= parentPosX+1;
 			newPosY= parentPosY;
-		}else if(newP==3){ //katw deksia
+		}else if(newP==3){
 			newPosX= parentPosX+1;
 			newPosY= parentPosY+1;
 			same=1;
-		}else if(newP==4){ //deksia
+		}else if(newP==4){
 			newPosX= parentPosX;
 			newPosY= parentPosY+1;
-		}else if(newP==5){ //panw deksia
+		}else if(newP==5){
 			newPosX= parentPosX-1;
 			newPosY= parentPosY+1;
 			same=1;
-		}else if(newP==6){ //panw keli
+		}else if(newP==6){
 			newPosX= parentPosX-1;
 			newPosY= parentPosY;
-		}else{ //panw aristera
+		}else{
 			newPosX= parentPosX-1;
 			newPosY= parentPosY-1;
 			same=1;
@@ -88,50 +88,50 @@ class Implementor{ //periexei thn ylopoihsh twn methodwn
 				break;
 			}else{
 				for(int i=0;i<8;i++){
-					if(i==0){ //aristera
-						if(posY==0){ //de paei pio aristera
+					if(i==0){
+						if(posY==0){
 							continue;
 						}if(check.isX(posX,posY-1)){
 							continue;
 						}
-					}else if(i==1){ //katw aristera
-						if((posY==0) || (posX==check.getN()-1)){ //de paei pio katw aristera
+					}else if(i==1){
+						if((posY==0) || (posX==check.getN()-1)){
 							continue;
 						}if(check.isX(posX+1,posY-1)){
 							continue;
 						}
-					}else if(i==2){ //katw
-						if(posX==check.getN()-1){ //de paei pio katw
+					}else if(i==2){
+						if(posX==check.getN()-1){
 							continue;
 						}if(check.isX(posX+1,posY)){
 							continue;
 						}
-					}else if(i==3){ //katw deksia
-						if((posY==check.getN()-1) || (posX==check.getN()-1)){ //de paei pio katw kai pio deksia
+					}else if(i==3){
+						if((posY==check.getN()-1) || (posX==check.getN()-1)){
 							continue;
 						}if(check.isX(posX+1,posY+1)){
 							continue;
 						}
-					}else if(i==4){ //deksia
-						if(posY==check.getN()-1){ //de paei pio deksia
+					}else if(i==4){
+						if(posY==check.getN()-1){
 							continue;
 						}if(check.isX(posX,posY+1)){
 							continue;
 						}
-					}else if(i==5){ //panw deksia
-						if((posY==check.getN()-1) || (posX==0)){ //de paei pio panw kai pio deksia
+					}else if(i==5){
+						if((posY==check.getN()-1) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY+1)){
 							continue;
 						}
-					}else if(i==6){ //panw
-						if(posX==0){ //de paei pio panw
+					}else if(i==6){
+						if(posX==0){
 							continue;
 						}if(check.isX(posX-1,posY)){
 							continue;
 						}
-					}else if(i==7){ //panw aristera
-						if((posY==0) || (posX==0)){ //de paei pio panw kai pio aristera
+					}else if(i==7){
+						if((posY==0) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY-1)){
 							continue;
@@ -166,49 +166,49 @@ class Implementor{ //periexei thn ylopoihsh twn methodwn
 				posX=check.getPos()[0];
 				posY=check.getPos()[1];
 				for(int i=0;i<8;i++){
-					if(i==0){ //aristera
-						if(posY==0){ //de paei pio aristera
+					if(i==0){
+						if(posY==0){
 							continue;
 						}if(check.isX(posX,posY-1)){
 							continue;
 						}
-					}else if(i==1){ //katw aristera
-						if((posY==0) || (posX==check.getN()-1)){ //de paei pio katw kai pio aristera
+					}else if(i==1){
+						if((posY==0) || (posX==check.getN()-1)){
 							continue;
 						}if(check.isX(posX+1,posY-1)){
 							continue;
 						}
-					}else if(i==2){ //katw
+					}else if(i==2){
 						if(posX==check.getN()-1){
 							continue;
 						}if(check.isX(posX+1,posY)){
 							continue;
 						}
-					}else if(i==3){ //katw deksia
+					}else if(i==3){
 						if((posY==check.getN()-1) || (posX==check.getN()-1)){
 							continue;
 						}if(check.isX(posX+1,posY+1)){
 							continue;
 						}
-					}else if(i==4){ //deksia
+					}else if(i==4){
 						if(posY==check.getN()-1){
 							continue;
 						}if(check.isX(posX,posY+1)){
 							continue;
 						}
-					}else if(i==5){ //panw deksia
+					}else if(i==5){
 						if((posY==check.getN()-1) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY+1)){
 							continue;
 						}
-					}else if(i==6){ //panw
+					}else if(i==6){
 						if(posX==0){
 							continue;
 						}if(check.isX(posX-1,posY)){
 							continue;
 						}
-					}else if(i==7){ //panw aristera
+					}else if(i==7){
 						if((posY==0) || (posX==0)){
 							continue;
 						}if(check.isX(posX-1,posY-1)){
